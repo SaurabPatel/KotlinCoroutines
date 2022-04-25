@@ -3,12 +3,12 @@ import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlin.system.measureTimeMillis
 
-var carCouterMutex = Mutex()
-var totalTimeMutex = Mutex()
-var readyCars = 0
-var totalTimeTaken: Long = 0
-
 fun main(args: Array<String>) = runBlocking {
+
+        var carCouterMutex = Mutex()
+        var totalTimeMutex = Mutex()
+        var readyCars = 0
+        var totalTimeTaken: Long = 0
 
         val carsToProduce = args[0].toIntOrNull()
         if(carsToProduce == null) { return@runBlocking }
